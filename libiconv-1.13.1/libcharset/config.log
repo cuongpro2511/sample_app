@@ -30,18 +30,23 @@ Kernel configured for up to 4 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1 2 3
 Primary memory available: 8.00 gigabytes
-Default processor set: 199 tasks, 954 threads, 4 processors
-Load average: 3.23, Mach factor: 1.19
+Default processor set: 210 tasks, 1035 threads, 4 processors
+Load average: 2.08, Mach factor: 1.91
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /Users/cuongpro/.rvm/gems/ruby-2.1.2/bin
+PATH: /Users/cuongpro/.rvm/gems/ruby-2.1.2@global/bin
+PATH: /Users/cuongpro/.rvm/rubies/ruby-2.1.2/bin
+PATH: /usr/local/heroku/bin
 PATH: /Users/cuongpro/.rbenv/shims
 PATH: /usr/bin
 PATH: /bin
 PATH: /usr/sbin
 PATH: /sbin
 PATH: /usr/local/bin
+PATH: /Users/cuongpro/.rvm/bin
 
 
 ## ----------- ##
@@ -438,6 +443,7 @@ config.status:967: creating lib/Makefile
 config.status:967: creating include/localcharset.h
 config.status:967: creating include/localcharset.h.inst
 config.status:967: creating config.h
+config.status:1183: config.h is unchanged
 config.status:1201: executing libtool commands
 
 ## ---------------- ##

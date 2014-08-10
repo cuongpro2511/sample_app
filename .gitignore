@@ -15,4 +15,7 @@
 /log/*.log
 /tmp
 
-.secret
+.project
+.DS_Store
+.idea
+bundler_stubs/

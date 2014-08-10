@@ -8,7 +8,7 @@ srcdir = .
 # Programs used by "make":
 CC = gcc
 CFLAGS = -g -O2
-CPPFLAGS = 
+CPPFLAGS = -I/usr/local/Cellar/libiconv/1.13.1/include
 LDFLAGS = 
 INCLUDES = -I. -I$(srcdir) -I../include -I$(srcdir)/../include -I../srclib -I$(srcdir)/../srclib -I../lib
 LIBTOOL = /bin/sh $(top_builddir)/libtool

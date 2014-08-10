@@ -19,7 +19,7 @@ localedir = ${datarootdir}/locale
 # Programs used by "make":
 CC = gcc
 CFLAGS = -g -O2
-CPPFLAGS = 
+CPPFLAGS = -I/usr/local/Cellar/libiconv/1.13.1/include
 LDFLAGS = 
 INCLUDES = -I. -I$(srcdir) -I.. -I../include -I$(srcdir)/../include -I../srclib -I$(srcdir)/../srclib
 LIBTOOL = /bin/sh $(top_builddir)/libtool

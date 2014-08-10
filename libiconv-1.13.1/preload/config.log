@@ -30,18 +30,23 @@ Kernel configured for up to 4 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1 2 3
 Primary memory available: 8.00 gigabytes
-Default processor set: 199 tasks, 953 threads, 4 processors
-Load average: 1.92, Mach factor: 2.07
+Default processor set: 210 tasks, 1018 threads, 4 processors
+Load average: 2.87, Mach factor: 1.53
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /Users/cuongpro/.rvm/gems/ruby-2.1.2/bin
+PATH: /Users/cuongpro/.rvm/gems/ruby-2.1.2@global/bin
+PATH: /Users/cuongpro/.rvm/rubies/ruby-2.1.2/bin
+PATH: /usr/local/heroku/bin
 PATH: /Users/cuongpro/.rbenv/shims
 PATH: /usr/bin
 PATH: /bin
 PATH: /usr/sbin
 PATH: /sbin
 PATH: /usr/local/bin
+PATH: /Users/cuongpro/.rvm/bin
 
 
 ## ----------- ##

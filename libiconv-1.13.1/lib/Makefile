@@ -14,7 +14,7 @@ libdir = ${exec_prefix}/lib
 # Programs used by "make":
 CC = gcc
 CFLAGS = -g -O2 -fvisibility=hidden
-CPPFLAGS = 
+CPPFLAGS = -I/usr/local/Cellar/libiconv/1.13.1/include
 LDFLAGS =  $(LDFLAGS_no)
 LDFLAGS_yes = -Wl,--export-all-symbols
 LDFLAGS_no =

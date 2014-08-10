@@ -143,7 +143,7 @@ CFLAGS = -g -O2
 CFLAG_VISIBILITY = -fvisibility=hidden
 CP = cp -p
 CPP = gcc -E
-CPPFLAGS = 
+CPPFLAGS = -I/usr/local/Cellar/libiconv/1.13.1/include
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H -DEXEEXT=\"\"
 DEPDIR = .deps
@@ -398,7 +398,7 @@ INTLLIBS =
 INTL_MACOSX_LIBS = -Wl,-framework -Wl,CoreFoundation
 LD = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld
 LDFLAGS = 
-LIBICONV = -liconv
+LIBICONV = -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv
 LIBICRT_LIBDEPS = 
 LIBICRT_LTLIBDEPS = 
 LIBINTL = 
@@ -408,7 +408,7 @@ LIBTOOL = /bin/sh $(top_builddir)/libtool
 LIPO = lipo
 LN = ln
 LN_S = ln -s
-LTLIBICONV = -liconv
+LTLIBICONV = -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv -R/usr/local/Cellar/libiconv/1.13.1/lib
 LTLIBINTL = 
 LTLIBOBJS = 
 MAKEINFO = ${SHELL} /Users/cuongpro/Ruby/sample_app/libiconv-1.13.1/build-aux/missing --run makeinfo

@@ -30,18 +30,23 @@ Kernel configured for up to 4 processors.
 Processor type: i486 (Intel 80486)
 Processors active: 0 1 2 3
 Primary memory available: 8.00 gigabytes
-Default processor set: 198 tasks, 931 threads, 4 processors
-Load average: 1.43, Mach factor: 2.56
+Default processor set: 209 tasks, 1040 threads, 4 processors
+Load average: 1.69, Mach factor: 2.36
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /Users/cuongpro/.rvm/gems/ruby-2.1.2/bin
+PATH: /Users/cuongpro/.rvm/gems/ruby-2.1.2@global/bin
+PATH: /Users/cuongpro/.rvm/rubies/ruby-2.1.2/bin
+PATH: /usr/local/heroku/bin
 PATH: /Users/cuongpro/.rbenv/shims
 PATH: /usr/bin
 PATH: /bin
 PATH: /usr/sbin
 PATH: /sbin
 PATH: /usr/local/bin
+PATH: /Users/cuongpro/.rvm/bin
 
 
 ## ----------- ##
@@ -460,14 +465,14 @@ configure:13380: result: yes
 configure:13413: checking for shared library run path origin
 configure:13426: result: done
 configure:14008: checking for iconv
-configure:14040: gcc -o conftest -g -O2   conftest.c  >&5
+configure:14040: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 Undefined symbols for architecture x86_64:
-  "_iconv", referenced from:
-      _main in conftest-500658.o
-  "_iconv_close", referenced from:
-      _main in conftest-500658.o
-  "_iconv_open", referenced from:
-      _main in conftest-500658.o
+  "_libiconv", referenced from:
+      _main in conftest-e7a571.o
+  "_libiconv_close", referenced from:
+      _main in conftest-e7a571.o
+  "_libiconv_open", referenced from:
+      _main in conftest-e7a571.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:14047: $? = 1
@@ -511,19 +516,19 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:14093: gcc -o conftest -g -O2   conftest.c  -liconv >&5
+configure:14093: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv >&5
 configure:14100: $? = 0
 configure:14124: result: yes
 configure:14127: checking for working iconv
-configure:14213: gcc -o conftest -g -O2   conftest.c  -liconv >&5
+configure:14213: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv >&5
 configure:14217: $? = 0
 configure:14223: ./conftest
 configure:14227: $? = 0
 configure:14246: result: yes
 configure:14263: checking how to link with libiconv
-configure:14265: result: -liconv
+configure:14265: result: -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv
 configure:14276: checking for iconv declaration
-configure:14315: gcc -c -g -O2  conftest.c >&5
+configure:14315: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:14322: $? = 0
 configure:14341: result: 
          extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
@@ -538,15 +543,15 @@ configure:14560: result: no
 configure:14603: checking for msgmerge
 configure:14637: result: no
 configure:14674: checking for CFPreferencesCopyAppValue
-configure:14702: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
+configure:14702: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
 configure:14709: $? = 0
 configure:14730: result: yes
 configure:14739: checking for CFLocaleCopyCurrent
-configure:14767: gcc -o conftest -g -O2   conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
+configure:14767: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  -Wl,-framework -Wl,CoreFoundation >&5
 configure:14774: $? = 0
 configure:14795: result: yes
 configure:14846: checking for GNU gettext in libc
-configure:14876: gcc -o conftest -g -O2   conftest.c  >&5
+configure:14876: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 conftest.c:33:10: fatal error: 'libintl.h' file not found
 #include <libintl.h>
          ^
@@ -603,9 +608,9 @@ configure:15055: result: yes
 configure:15058: checking for working iconv
 configure:15177: result: yes
 configure:15194: checking how to link with libiconv
-configure:15196: result: -liconv
+configure:15196: result: -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv
 configure:15668: checking for GNU gettext in libintl
-configure:15706: gcc -o conftest -g -O2    conftest.c  -lintl >&5
+configure:15706: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include   conftest.c  -lintl >&5
 conftest.c:34:10: fatal error: 'libintl.h' file not found
 #include <libintl.h>
          ^
@@ -661,7 +666,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:15763: gcc -o conftest -g -O2    conftest.c  -lintl -liconv >&5
+configure:15763: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include   conftest.c  -lintl -L/usr/local/Cellar/libiconv/1.13.1/lib -liconv >&5
 conftest.c:34:10: fatal error: 'libintl.h' file not found
 #include <libintl.h>
          ^
@@ -721,39 +726,39 @@ configure:15798: result: no
 configure:15835: checking whether to use NLS
 configure:15837: result: no
 configure:15916: checking for mbstate_t
-configure:15943: gcc -c -g -O2  conftest.c >&5
+configure:15943: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:15950: $? = 0
 configure:15965: result: yes
 configure:15982: checking for wchar_t
-configure:16009: gcc -c -g -O2  conftest.c >&5
+configure:16009: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:16016: $? = 0
 configure:16031: result: yes
 configure:16065: checking for getc_unlocked
-configure:16121: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16121: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:16128: $? = 0
 configure:16150: result: yes
 configure:16065: checking for mbrtowc
-configure:16121: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16121: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:16128: $? = 0
 configure:16150: result: yes
 configure:16065: checking for wcrtomb
-configure:16121: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16121: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:16128: $? = 0
 configure:16150: result: yes
 configure:16065: checking for mbsinit
-configure:16121: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16121: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:16128: $? = 0
 configure:16150: result: yes
 configure:16065: checking for setlocale
-configure:16121: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16121: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:16128: $? = 0
 configure:16150: result: yes
 configure:16170: checking whether <wchar.h> is standalone
-configure:16185: gcc -c -g -O2  conftest.c >&5
+configure:16185: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:16192: $? = 0
 configure:16207: result: yes
 configure:16220: checking for memmove
-configure:16276: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16276: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 conftest.c:64:6: warning: incompatible redeclaration of library function 'memmove' [-Wincompatible-library-redeclaration]
 char memmove ();
      ^
@@ -762,15 +767,15 @@ conftest.c:64:6: note: 'memmove' is a builtin with type 'void *(void *, const vo
 configure:16283: $? = 0
 configure:16305: result: yes
 configure:16321: checking for nl_langinfo and CODESET
-configure:16347: gcc -o conftest -g -O2   conftest.c  >&5
+configure:16347: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:16354: $? = 0
 configure:16375: result: yes
 configure:16404: checking wchar.h usability
-configure:16421: gcc -c -g -O2  conftest.c >&5
+configure:16421: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:16428: $? = 0
 configure:16442: result: yes
 configure:16446: checking wchar.h presence
-configure:16461: gcc -E  conftest.c
+configure:16461: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:16468: $? = 0
 configure:16482: result: yes
 configure:16510: checking for wchar.h
@@ -778,7 +783,7 @@ configure:16519: result: yes
 configure:16535: checking for EILSEQ
 configure:16958: result: yes
 configure:16971: checking byte ordering
-configure:17004: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17004: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 conftest.c:52:3: warning: implicitly declaring library function 'exit' with type 'void (int) __attribute__((noreturn))'
   exit (u.c[0] == 1);
   ^
@@ -844,11 +849,11 @@ configure: failed program was:
 | }
 configure:17077: result: little endian
 configure:17099: checking for working alloca.h
-configure:17126: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17126: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:17133: $? = 0
 configure:17153: result: yes
 configure:17163: checking for alloca
-configure:17210: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17210: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:17217: $? = 0
 configure:17237: result: yes
 configure:17486: checking for stdlib.h
@@ -856,11 +861,11 @@ configure:17493: result: yes
 configure:17486: checking for string.h
 configure:17493: result: yes
 configure:17497: checking sys/param.h usability
-configure:17514: gcc -c -g -O2  conftest.c >&5
+configure:17514: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:17521: $? = 0
 configure:17535: result: yes
 configure:17539: checking sys/param.h presence
-configure:17554: gcc -E  conftest.c
+configure:17554: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:17561: $? = 0
 configure:17575: result: yes
 configure:17603: checking for sys/param.h
@@ -868,31 +873,31 @@ configure:17612: result: yes
 configure:17486: checking for unistd.h
 configure:17493: result: yes
 configure:17497: checking errno.h usability
-configure:17514: gcc -c -g -O2  conftest.c >&5
+configure:17514: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:17521: $? = 0
 configure:17535: result: yes
 configure:17539: checking errno.h presence
-configure:17554: gcc -E  conftest.c
+configure:17554: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:17561: $? = 0
 configure:17575: result: yes
 configure:17603: checking for errno.h
 configure:17612: result: yes
 configure:17497: checking sys/socket.h usability
-configure:17514: gcc -c -g -O2  conftest.c >&5
+configure:17514: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:17521: $? = 0
 configure:17535: result: yes
 configure:17539: checking sys/socket.h presence
-configure:17554: gcc -E  conftest.c
+configure:17554: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:17561: $? = 0
 configure:17575: result: yes
 configure:17603: checking for sys/socket.h
 configure:17612: result: yes
 configure:17497: checking signal.h usability
-configure:17514: gcc -c -g -O2  conftest.c >&5
+configure:17514: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:17521: $? = 0
 configure:17535: result: yes
 configure:17539: checking signal.h presence
-configure:17554: gcc -E  conftest.c
+configure:17554: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:17561: $? = 0
 configure:17575: result: yes
 configure:17603: checking for signal.h
@@ -902,17 +907,17 @@ configure:17493: result: yes
 configure:17486: checking for wchar.h
 configure:17493: result: yes
 configure:17497: checking stdio.h usability
-configure:17514: gcc -c -g -O2  conftest.c >&5
+configure:17514: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:17521: $? = 0
 configure:17535: result: yes
 configure:17539: checking stdio.h presence
-configure:17554: gcc -E  conftest.c
+configure:17554: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:17561: $? = 0
 configure:17575: result: yes
 configure:17603: checking for stdio.h
 configure:17612: result: yes
 configure:17631: checking whether canonicalize_file_name is declared
-configure:17660: gcc -c -g -O2  conftest.c >&5
+configure:17660: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:94:10: error: use of undeclared identifier 'canonicalize_file_name'
   (void) canonicalize_file_name;
          ^
@@ -1020,10 +1025,10 @@ configure: failed program was:
 | }
 configure:17682: result: no
 configure:17707: checking for canonicalize_file_name
-configure:17763: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17763: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_canonicalize_file_name", referenced from:
-      _main in conftest-20730d.o
+      _main in conftest-bae6b3.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:17770: $? = 1
@@ -1125,37 +1130,37 @@ configure: failed program was:
 | }
 configure:17792: result: no
 configure:17707: checking for getcwd
-configure:17763: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17763: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:17770: $? = 0
 configure:17792: result: yes
 configure:17707: checking for readlink
-configure:17763: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17763: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:17770: $? = 0
 configure:17792: result: yes
 configure:17707: checking for pathconf
-configure:17763: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17763: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:17770: $? = 0
 configure:17792: result: yes
 configure:17707: checking for setenv
-configure:17763: gcc -o conftest -g -O2   conftest.c  >&5
+configure:17763: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:17770: $? = 0
 configure:17792: result: yes
 configure:17865: checking whether the preprocessor supports include_next
-configure:17908: gcc -c -g -O2  -Iconftestd1b -Iconftestd2 conftest.c >&5
+configure:17908: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include -Iconftestd1b -Iconftestd2 conftest.c >&5
 configure:17915: $? = 0
 configure:17964: result: yes
 configure:17990: checking for complete errno.h
 configure:18046: result: yes
 configure:19383: checking whether strerror_r is declared
-configure:19412: gcc -c -g -O2  conftest.c >&5
+configure:19412: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:19419: $? = 0
 configure:19434: result: yes
 configure:19456: checking for strerror_r
-configure:19512: gcc -o conftest -g -O2   conftest.c  >&5
+configure:19512: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:19519: $? = 0
 configure:19541: result: yes
 configure:19553: checking whether strerror_r returns char *
-configure:19587: gcc -c -g -O2  conftest.c >&5
+configure:19587: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:102:13: error: indirection requires pointer operand ('int' invalid)
           char x = *strerror_r (0, buf, sizeof buf);
                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1275,37 +1280,37 @@ configure: failed program was:
 | }
 configure:19673: result: no
 configure:19687: checking whether malloc, realloc, calloc are POSIX compliant
-configure:19717: gcc -c -g -O2  conftest.c >&5
+configure:19717: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:19724: $? = 0
 configure:19740: result: yes
 configure:19787: checking for stdlib.h
 configure:19794: result: yes
 configure:19928: checking for GNU libc compatible malloc
-configure:19962: gcc -o conftest -g -O2   conftest.c  >&5
+configure:19962: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:19966: $? = 0
 configure:19972: ./conftest
 configure:19976: $? = 0
 configure:19993: result: yes
 configure:20009: checking for long long int
-configure:20056: gcc -o conftest -g -O2   conftest.c  >&5
+configure:20056: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:20063: $? = 0
-configure:20110: gcc -o conftest -g -O2   conftest.c  >&5
+configure:20110: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:20114: $? = 0
 configure:20120: ./conftest
 configure:20124: $? = 0
 configure:20151: result: yes
-configure:20181: gcc -c -g -O2  conftest.c >&5
+configure:20181: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:20188: $? = 0
 configure:20318: checking for SIGPIPE
 configure:20347: result: yes
 configure:20423: checking for stdbool.h that conforms to C99
-configure:20516: gcc -c -g -O2  conftest.c >&5
+configure:20516: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:20523: $? = 0
 configure:20538: result: yes
 configure:20540: checking for _Bool
-configure:20568: gcc -c -g -O2  conftest.c >&5
+configure:20568: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:20575: $? = 0
-configure:20602: gcc -c -g -O2  conftest.c >&5
+configure:20602: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:103:20: error: expected expression
 if (sizeof ((_Bool)))
                    ^
@@ -1421,27 +1426,27 @@ configure: failed program was:
 | }
 configure:20632: result: yes
 configure:20651: checking for unsigned long long int
-configure:20698: gcc -o conftest -g -O2   conftest.c  >&5
+configure:20698: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:20705: $? = 0
 configure:20725: result: yes
 configure:20741: checking for C/C++ restrict keyword
-configure:20776: gcc -c -g -O2  conftest.c >&5
+configure:20776: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:20783: $? = 0
 configure:20801: result: __restrict
 configure:20883: checking whether clearerr_unlocked is declared
-configure:20912: gcc -c -g -O2  conftest.c >&5
+configure:20912: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:20919: $? = 0
 configure:20934: result: yes
 configure:20952: checking whether feof_unlocked is declared
-configure:20981: gcc -c -g -O2  conftest.c >&5
+configure:20981: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:20988: $? = 0
 configure:21003: result: yes
 configure:21021: checking whether ferror_unlocked is declared
-configure:21050: gcc -c -g -O2  conftest.c >&5
+configure:21050: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:21057: $? = 0
 configure:21072: result: yes
 configure:21090: checking whether fflush_unlocked is declared
-configure:21119: gcc -c -g -O2  conftest.c >&5
+configure:21119: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:111:10: error: use of undeclared identifier 'fflush_unlocked'
   (void) fflush_unlocked;
          ^
@@ -1566,7 +1571,7 @@ configure: failed program was:
 | }
 configure:21141: result: no
 configure:21159: checking whether fgets_unlocked is declared
-configure:21188: gcc -c -g -O2  conftest.c >&5
+configure:21188: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:112:10: error: use of undeclared identifier 'fgets_unlocked'
   (void) fgets_unlocked;
          ^
@@ -1692,7 +1697,7 @@ configure: failed program was:
 | }
 configure:21210: result: no
 configure:21228: checking whether fputc_unlocked is declared
-configure:21257: gcc -c -g -O2  conftest.c >&5
+configure:21257: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:113:10: error: use of undeclared identifier 'fputc_unlocked'
   (void) fputc_unlocked;
          ^
@@ -1819,7 +1824,7 @@ configure: failed program was:
 | }
 configure:21279: result: no
 configure:21297: checking whether fputs_unlocked is declared
-configure:21326: gcc -c -g -O2  conftest.c >&5
+configure:21326: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:114:10: error: use of undeclared identifier 'fputs_unlocked'
   (void) fputs_unlocked;
          ^
@@ -1947,7 +1952,7 @@ configure: failed program was:
 | }
 configure:21348: result: no
 configure:21366: checking whether fread_unlocked is declared
-configure:21395: gcc -c -g -O2  conftest.c >&5
+configure:21395: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:115:10: error: use of undeclared identifier 'fread_unlocked'
   (void) fread_unlocked;
          ^
@@ -2076,7 +2081,7 @@ configure: failed program was:
 | }
 configure:21417: result: no
 configure:21435: checking whether fwrite_unlocked is declared
-configure:21464: gcc -c -g -O2  conftest.c >&5
+configure:21464: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:116:10: error: use of undeclared identifier 'fwrite_unlocked'
   (void) fwrite_unlocked;
          ^
@@ -2206,31 +2211,31 @@ configure: failed program was:
 | }
 configure:21486: result: no
 configure:21504: checking whether getc_unlocked is declared
-configure:21533: gcc -c -g -O2  conftest.c >&5
+configure:21533: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:21540: $? = 0
 configure:21555: result: yes
 configure:21573: checking whether getchar_unlocked is declared
-configure:21602: gcc -c -g -O2  conftest.c >&5
+configure:21602: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:21609: $? = 0
 configure:21624: result: yes
 configure:21642: checking whether putc_unlocked is declared
-configure:21671: gcc -c -g -O2  conftest.c >&5
+configure:21671: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:21678: $? = 0
 configure:21693: result: yes
 configure:21711: checking whether putchar_unlocked is declared
-configure:21740: gcc -c -g -O2  conftest.c >&5
+configure:21740: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:21747: $? = 0
 configure:21762: result: yes
 configure:21818: checking for wint_t
-configure:21853: gcc -c -g -O2  conftest.c >&5
+configure:21853: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:21860: $? = 0
 configure:21875: result: yes
 configure:22009: checking if environ is properly declared
-configure:22037: gcc -c -g -O2  conftest.c >&5
+configure:22037: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:22044: $? = 0
 configure:22060: result: no
 configure:22093: checking for error_at_line
-configure:22119: gcc -o conftest -g -O2   conftest.c  >&5
+configure:22119: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 conftest.c:87:10: fatal error: 'error.h' file not found
 #include <error.h>
          ^
@@ -2337,29 +2342,29 @@ configure:22260: result: yes
 configure:22289: checking for memmove
 configure:22374: result: yes
 configure:22558: checking search.h usability
-configure:22575: gcc -c -g -O2  conftest.c >&5
+configure:22575: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:22582: $? = 0
 configure:22596: result: yes
 configure:22600: checking search.h presence
-configure:22615: gcc -E  conftest.c
+configure:22615: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 configure:22622: $? = 0
 configure:22636: result: yes
 configure:22664: checking for search.h
 configure:22673: result: yes
 configure:22692: checking for tsearch
-configure:22748: gcc -o conftest -g -O2   conftest.c  >&5
+configure:22748: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:22755: $? = 0
 configure:22777: result: yes
 configure:22795: checking for working strerror function
-configure:22868: gcc -o conftest -g -O2   conftest.c  >&5
+configure:22868: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:22872: $? = 0
 configure:22878: ./conftest
 configure:22882: $? = 0
 configure:22900: result: yes
 configure:23202: checking for volatile sig_atomic_t
-configure:23233: gcc -c -g -O2  conftest.c >&5
+configure:23233: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:23240: $? = 0
-configure:23270: gcc -c -g -O2  conftest.c >&5
+configure:23270: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:99:36: error: expected expression
 if (sizeof ((volatile sig_atomic_t)))
                                    ^
@@ -2471,15 +2476,15 @@ configure: failed program was:
 | }
 configure:23300: result: yes
 configure:23346: checking for sigprocmask
-configure:23402: gcc -o conftest -g -O2   conftest.c  >&5
+configure:23402: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:23409: $? = 0
 configure:23429: result: yes
 configure:23573: checking for ssize_t
-configure:23600: gcc -c -g -O2  conftest.c >&5
+configure:23600: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:23607: $? = 0
 configure:23622: result: yes
 configure:23752: checking whether stdint.h conforms to C99
-configure:23931: gcc -c -g -O2  conftest.c >&5
+configure:23931: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:213:7: error: bit-field 'check_UINT8_C' has negative width (-1)
   int check_UINT8_C:
       ^
@@ -2741,7 +2746,7 @@ configure: failed program was:
 | }
 configure:24073: result: no
 configure:24096: checking sys/inttypes.h usability
-configure:24113: gcc -c -g -O2  conftest.c >&5
+configure:24113: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:126:10: fatal error: 'sys/inttypes.h' file not found
 #include <sys/inttypes.h>
          ^
@@ -2876,7 +2881,7 @@ configure: failed program was:
 | #include <sys/inttypes.h>
 configure:24134: result: no
 configure:24138: checking sys/inttypes.h presence
-configure:24153: gcc -E  conftest.c
+configure:24153: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 conftest.c:93:10: fatal error: 'sys/inttypes.h' file not found
 #include <sys/inttypes.h>
          ^
@@ -2980,7 +2985,7 @@ configure:24174: result: no
 configure:24202: checking for sys/inttypes.h
 configure:24211: result: no
 configure:24096: checking sys/bitypes.h usability
-configure:24113: gcc -c -g -O2  conftest.c >&5
+configure:24113: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:126:10: fatal error: 'sys/bitypes.h' file not found
 #include <sys/bitypes.h>
          ^
@@ -3115,7 +3120,7 @@ configure: failed program was:
 | #include <sys/bitypes.h>
 configure:24134: result: no
 configure:24138: checking sys/bitypes.h presence
-configure:24153: gcc -E  conftest.c
+configure:24153: gcc -E -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c
 conftest.c:93:10: fatal error: 'sys/bitypes.h' file not found
 #include <sys/bitypes.h>
          ^
@@ -3219,49 +3224,49 @@ configure:24174: result: no
 configure:24202: checking for sys/bitypes.h
 configure:24211: result: no
 configure:24254: checking for bit size of ptrdiff_t
-configure:24615: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24615: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:24619: $? = 0
 configure:24625: ./conftest
 configure:24629: $? = 0
 configure:24649: result: 64
 configure:24254: checking for bit size of size_t
-configure:24615: gcc -o conftest -g -O2   conftest.c  >&5
+configure:24615: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:24619: $? = 0
 configure:24625: ./conftest
 configure:24629: $? = 0
 configure:24649: result: 64
 configure:24671: checking for bit size of sig_atomic_t
-configure:25032: gcc -o conftest -g -O2   conftest.c  >&5
+configure:25032: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:25036: $? = 0
 configure:25042: ./conftest
 configure:25046: $? = 0
 configure:25066: result: 32
 configure:24671: checking for bit size of wchar_t
-configure:25032: gcc -o conftest -g -O2   conftest.c  >&5
+configure:25032: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:25036: $? = 0
 configure:25042: ./conftest
 configure:25046: $? = 0
 configure:25066: result: 32
 configure:24671: checking for bit size of wint_t
-configure:25032: gcc -o conftest -g -O2   conftest.c  >&5
+configure:25032: gcc -o conftest -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include  conftest.c  >&5
 configure:25036: $? = 0
 configure:25042: ./conftest
 configure:25046: $? = 0
 configure:25066: result: 32
 configure:25087: checking whether sig_atomic_t is signed
-configure:25124: gcc -c -g -O2  conftest.c >&5
+configure:25124: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25131: $? = 0
 configure:25150: result: yes
 configure:25087: checking whether wchar_t is signed
-configure:25124: gcc -c -g -O2  conftest.c >&5
+configure:25124: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25131: $? = 0
 configure:25150: result: yes
 configure:25087: checking whether wint_t is signed
-configure:25124: gcc -c -g -O2  conftest.c >&5
+configure:25124: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25131: $? = 0
 configure:25150: result: yes
 configure:25174: checking for ptrdiff_t integer literal suffix
-configure:25230: gcc -c -g -O2  conftest.c >&5
+configure:25230: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:113:26: error: redefinition of 'foo' with a different type: 'int' vs 'ptrdiff_t' (aka 'long')
               extern int foo;
                          ^
@@ -3391,11 +3396,11 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:25230: gcc -c -g -O2  conftest.c >&5
+configure:25230: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25237: $? = 0
 configure:25257: result: l
 configure:25174: checking for size_t integer literal suffix
-configure:25230: gcc -c -g -O2  conftest.c >&5
+configure:25230: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:114:35: error: redefinition of 'foo' with a different type: 'unsigned int' vs 'size_t' (aka 'unsigned long')
               extern unsigned int foo;
                                   ^
@@ -3526,23 +3531,23 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:25230: gcc -c -g -O2  conftest.c >&5
+configure:25230: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25237: $? = 0
 configure:25257: result: ul
 configure:25277: checking for sig_atomic_t integer literal suffix
-configure:25333: gcc -c -g -O2  conftest.c >&5
+configure:25333: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25340: $? = 0
 configure:25360: result: 
 configure:25277: checking for wchar_t integer literal suffix
-configure:25333: gcc -c -g -O2  conftest.c >&5
+configure:25333: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25340: $? = 0
 configure:25360: result: 
 configure:25277: checking for wint_t integer literal suffix
-configure:25333: gcc -c -g -O2  conftest.c >&5
+configure:25333: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 configure:25340: $? = 0
 configure:25360: result: 
 configure:25539: checking for random.h
-configure:25560: gcc -c -g -O2  conftest.c >&5
+configure:25560: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:140:10: fatal error: 'random.h' file not found
 #include <random.h>
          ^
@@ -3691,7 +3696,7 @@ configure: failed program was:
 | #include <random.h>
 configure:25584: result: no
 configure:25603: checking for struct random_data
-configure:25636: gcc -c -g -O2  conftest.c >&5
+configure:25636: gcc -c -g -O2 -I/usr/local/Cellar/libiconv/1.13.1/include conftest.c >&5
 conftest.c:115:5: error: invalid application of 'sizeof' to an incomplete type 'struct random_data'
 if (sizeof (struct random_data))
     ^      ~~~~~~~~~~~~~~~~~~~~
@@ -3850,7 +3855,9 @@ config.status:1492: creating tests/Makefile
 config.status:1492: creating include/iconv.h
 config.status:1492: creating include/iconv.h.inst
 config.status:1492: creating config.h
+config.status:1714: config.h is unchanged
 config.status:1492: creating lib/config.h
+config.status:1714: lib/config.h is unchanged
 config.status:1766: executing depfiles commands
 config.status:1766: executing libtool commands
 config.status:1766: executing po-directories commands
@@ -4092,7 +4099,7 @@ CFLAGS='-g -O2'
 CFLAG_VISIBILITY='-fvisibility=hidden'
 CP='cp -p'
 CPP='gcc -E'
-CPPFLAGS=''
+CPPFLAGS='-I/usr/local/Cellar/libiconv/1.13.1/include'
 CYGPATH_W='echo'
 DEFS='-DHAVE_CONFIG_H'
 DEPDIR='.deps'
@@ -4348,7 +4355,7 @@ INTLLIBS=''
 INTL_MACOSX_LIBS='-Wl,-framework -Wl,CoreFoundation'
 LD='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld'
 LDFLAGS=''
-LIBICONV='-liconv'
+LIBICONV='-L/usr/local/Cellar/libiconv/1.13.1/lib -liconv'
 LIBICRT_LIBDEPS=''
 LIBICRT_LTLIBDEPS=''
 LIBINTL=''
@@ -4358,7 +4365,7 @@ LIBTOOL='/bin/sh $(top_builddir)/libtool'
 LIPO='lipo'
 LN='ln'
 LN_S='ln -s'
-LTLIBICONV='-liconv'
+LTLIBICONV='-L/usr/local/Cellar/libiconv/1.13.1/lib -liconv -R/usr/local/Cellar/libiconv/1.13.1/lib'
 LTLIBINTL=''
 LTLIBOBJS=''
 MAKEINFO='${SHELL} /Users/cuongpro/Ruby/sample_app/libiconv-1.13.1/build-aux/missing --run makeinfo'
